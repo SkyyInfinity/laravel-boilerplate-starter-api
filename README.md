@@ -4,8 +4,8 @@
     </a>
 </p>
 
-## Shoppingify Challenge API
-This is a challenge by [devchallenges.io](https://devchallenges.io/)
+## Laravel Boilerplate Starter API
+An simple Laravel application optimized for API. With pre-installed : User authentication, Mail system, Dev tools.
 
 ---
 
@@ -20,3 +20,7 @@ This project is licensed under the [MIT license](https://opensource.org/licenses
 
 ## IV. Credits
 - [Laravel](https://laravel.com)
+- [Pint](https://laravel.com/docs/10.x/pint)
+- [PHPStan](https://phpstan.org/)
+- [IDE Helper](https://github.com/barryvdh/laravel-ide-helper)
+- [JWT Auth](https://jwt-auth.readthedocs.io/en/develop/)

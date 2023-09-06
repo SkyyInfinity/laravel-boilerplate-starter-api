@@ -13,7 +13,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 /**
  * @phpstan-ignore-next-line
  *
- * @mixin \App\Models\IdeHelperUser
+ * @mixin IdeHelperUser
  */
 class User extends Authenticatable implements JWTSubject, MustVerifyEmail
 {

@@ -143,7 +143,7 @@ class AuthController extends Controller
      */
     public function refresh(): JsonResponse
     {
-        return $this->respondWithToken(auth()->refresh()); // @phpstan-ignore-line
+        return $this->respondWithToken(auth()->refresh());
     }
 
     /**
