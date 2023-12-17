@@ -11,8 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 /**
- * @phpstan-ignore-next-line
- *
+ * @phpstan-ignore-next-line 
  * @mixin IdeHelperUser
  */
 class User extends Authenticatable implements JWTSubject, MustVerifyEmail
@@ -29,6 +28,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail
         'email',
         'password',
         'action_token',
+        'last_login_at',
     ];
 
     /**
@@ -48,6 +48,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'last_login_at' => 'datetime',
         'password' => 'hashed',
     ];
 

@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.com',
             'email_verified_at' => now(),
             'password' => Hash::make('admin'),
+            'last_login_at' => now(),
         ]);
 
         \App\Models\User::factory(10)->create();
