@@ -34,7 +34,7 @@ class MailController extends Controller
     /**
      * @param  array<string, mixed>  $data
      */
-    public function signUpMail(string $to, array $data): JsonResponse
+    public function registerMail(string $to, array $data): JsonResponse
     {
         try {
             Mail::to($to)->send(new RegisterMail($data));

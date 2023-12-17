@@ -18,7 +18,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['signIn', 'signUp', 'verify']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'verify']]);
     }
 
     /**
@@ -26,7 +26,7 @@ class AuthController extends Controller
      *
      * @throws ValidationException
      */
-    public function signUp(SignUpRequest $request, UtilsController $utils, MailController $mailController): JsonResponse
+    public function register(SignUpRequest $request, UtilsController $utils, MailController $mailController): JsonResponse
     {
         // Validate request
         $subscriber = $request->validated();
@@ -44,7 +44,7 @@ class AuthController extends Controller
 
         // Send email to user with token and user data
         try {
-            $mailController->signUpMail($user->email, [
+            $mailController->registerMail($user->email, [
                 'user' => $user,
                 'token' => $token,
             ]);
@@ -127,7 +127,7 @@ class AuthController extends Controller
     /**
      * Get a JWT via given credentials.
      */
-    public function signIn(): JsonResponse
+    public function login(): JsonResponse
     {
         $credentials = request(['email', 'password']);
 
@@ -149,7 +149,7 @@ class AuthController extends Controller
     /**
      * Log the user out (Invalidate the token).
      */
-    public function signOut(): JsonResponse
+    public function logout(): JsonResponse
     {
         auth()->logout();
 
